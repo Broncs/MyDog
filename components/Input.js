@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
 
     // Set border color.
     borderColor: "#C5C5C5",
-    padding: 1.2,
+    padding: 1.1,
     paddingRight: 5,
   },
   imageContainerLock: {
