@@ -3,15 +3,19 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import Input from "../components/Input";
 import MainButton from "../components/MainButton";
 import colors from "../constants/colors";
+import Header from "../components/Header";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
+      <Header title="myDog" />
       <View style={styles.inputContainer}>
         <Input placeholder="Username or e-mail" paw autoCorrect={false} />
         <Input placeholder="Password" autoCorrect={false} />
         <View style={styles.buttonContainer}>
-          <MainButton>Log In</MainButton>
+          <MainButton onPress={() => navigation.navigate("Home")}>
+            Log In
+          </MainButton>
           <Text style={styles.signUp}>
             Don't have an account yet ?{" "}
             <Text style={styles.innerText}>Sign up!</Text>
@@ -38,6 +42,7 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: "white",
   },
   inputContainer: {
     marginTop: 70,
