@@ -5,7 +5,7 @@ import MainButton from "../components/MainButton";
 import colors from "../constants/colors";
 import Header from "../components/Header";
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = ({ navigation, showBottomTab }) => {
   return (
     <View style={styles.screen}>
       <Header title="myDog" />
@@ -13,7 +13,12 @@ const LoginScreen = ({ navigation }) => {
         <Input placeholder="Username or e-mail" paw autoCorrect={false} />
         <Input placeholder="Password" autoCorrect={false} />
         <View style={styles.buttonContainer}>
-          <MainButton onPress={() => navigation.navigate("Home")}>
+          <MainButton
+            onPress={() => {
+              navigation.navigate("Home");
+              showBottomTab();
+            }}
+          >
             Log In
           </MainButton>
           <Text style={styles.signUp}>

@@ -11,27 +11,32 @@ const HomeScreen = ({ navigation }) => {
       <HeaderProfile />
       <Status />
       <View style={styles.cardWrapper}>
-        <Card text="Medical record" />
         <Card
           text="Medical record"
+          onPress={() => navigation.navigate("Medical")}
+        />
+        <Card
+          text="Schedule visits"
           iconPath={require("../assets/icons/schedule-icon.png")}
+          onPress={() => navigation.navigate("Schedule")}
         />
       </View>
       <View style={styles.cardWrapper}>
         <Card
-          text="Medical record"
+          text="Detailed information"
           iconPath={require("../assets/icons/pawprint.png")}
+          onPress={() => navigation.navigate("Profile")}
           style={styles.card}
         />
         <Card
-          text="Medical record"
+          text="Vaccination schedule"
           iconPath={require("../assets/icons/vaccine-icon.png")}
           style={styles.card}
         />
       </View>
-      <View style={styles.navWrapper}>
+      {/* <View style={styles.navWrapper}>
         <Navigation />
-      </View>
+      </View> */}
     </View>
   );
 };
@@ -52,11 +57,5 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: Colors.secondary,
-  },
-  navWrapper: {
-    flex: 1,
-    justifyContent: "flex-end",
-
-    width: "90%",
   },
 });
