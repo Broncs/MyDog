@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
-const Status = () => {
+const Status = (props) => {
   return (
-    <View style={styles.wrapper}>
+    <View style={{ ...styles.wrapper, ...props.style }}>
       <View style={styles.item}>
         <Text style={styles.itemText}>Rotweiller</Text>
         <Image source={require("../assets/icons/pawprint-orange.png")} />
