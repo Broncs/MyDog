@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
+import Colors from "../constants/colors";
 
 const Status = (props) => {
   return (
@@ -31,7 +32,7 @@ export default Status;
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: "#F5F5F5",
+    backgroundColor: Colors.lightGrey,
     borderRadius: 10,
     flexDirection: "row",
     justifyContent: "space-around",
