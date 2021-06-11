@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import * as RootNavigation from "../RootNavigation";
+
 import {
   StyleSheet,
   Text,
@@ -9,9 +11,15 @@ import {
 
 const Navigation = () => {
   const [active, setActive] = useState("home");
+
   return (
     <View style={styles.navWrapper}>
-      <TouchableWithoutFeedback onPress={() => setActive("home")}>
+      <TouchableWithoutFeedback
+        onPress={() => {
+          setActive("home");
+          RootNavigation.navigate("Home");
+        }}
+      >
         <View
           style={
             active === "home"
