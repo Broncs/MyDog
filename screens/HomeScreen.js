@@ -4,6 +4,7 @@ import Colors from "../constants/colors";
 import Card from "../components/Card";
 import HeaderProfile from "../components/HeaderProfile";
 import Status from "../components/Status";
+import Navigation from "../components/Navigation";
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
@@ -28,6 +29,9 @@ const HomeScreen = ({ navigation }) => {
           style={styles.card}
         />
       </View>
+      <View style={styles.navWrapper}>
+        <Navigation />
+      </View>
     </View>
   );
 };
@@ -48,5 +52,11 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: Colors.secondary,
+  },
+  navWrapper: {
+    flex: 1,
+    justifyContent: "flex-end",
+
+    width: "90%",
   },
 });
