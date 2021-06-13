@@ -1,33 +1,20 @@
-import React, { useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  BackHandler,
-  Alert,
-} from "react-native";
+import React, { useCallback } from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
+
+import { useFocusEffect } from "@react-navigation/native";
 import Input from "../components/Input";
 import MainButton from "../components/MainButton";
 import colors from "../constants/colors";
 import Header from "../components/Header";
 
-const LoginScreen = ({ navigation, showBottomTab }) => {
-  useEffect(() => {
-    const backAction = () => {
-      Alert.alert("Hold on!", "Are you sure you want to go back ?", [
-        { text: "Cancel", onPress: () => null, style: "cancel" },
-        { text: "YES", onPress: () => BackHandler.exitApp() },
-      ]);
-    };
+const LoginScreen = ({ navigation, hideBottomTab }) => {
+  useFocusEffect(
+    useCallback(() => {
+      // Do something when the screen is focused
 
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
-
-    return () => backHandler.remove();
-  }, []);
+      hideBottomTab();
+    }, [])
+  );
 
   return (
     <View style={styles.screen}>
@@ -39,7 +26,6 @@ const LoginScreen = ({ navigation, showBottomTab }) => {
           <MainButton
             onPress={() => {
               navigation.navigate("Home");
-              showBottomTab();
             }}
           >
             Log In

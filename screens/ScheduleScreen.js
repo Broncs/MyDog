@@ -1,29 +1,17 @@
-import React, { useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  BackHandler,
-} from "react-native";
+import React, { useCallback } from "react";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
 import ScheduleCard from "../components/ScheduleCard";
 import SubHeader from "../components/SubHeader";
 import * as RootNavigation from "../RootNavigation";
 
-const ScheduleScreen = ({ showBottomTab }) => {
-  useEffect(() => {
-    const backAction = () => {
-      showBottomTab();
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      backAction
-    );
-
-    return () => backHandler.remove();
-  }, []);
+const ScheduleScreen = ({ hideBottomTab }) => {
+  useFocusEffect(
+    useCallback(() => {
+      // Do something when the screen is focused
+      hideBottomTab();
+    }, [])
+  );
 
   return (
     <View style={styles.screen}>
@@ -40,7 +28,6 @@ const ScheduleScreen = ({ showBottomTab }) => {
       <TouchableOpacity
         style={styles.iconWrapper}
         onPress={() => {
-          showBottomTab();
           RootNavigation.navigate("Home");
         }}
       >

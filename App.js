@@ -35,16 +35,16 @@ export default function App() {
         }}
       >
         <Stack.Screen name="Login">
-          {(props) => <LoginScreen {...props} showBottomTab={showBottomTab} />}
+          {(props) => <LoginScreen {...props} hideBottomTab={hideBottomTab} />}
         </Stack.Screen>
         <Stack.Screen name="Home">
-          {(props) => <HomeScreen {...props} hideBottomTab={hideBottomTab} />}
+          {(props) => <HomeScreen {...props} showBottomTab={showBottomTab} />}
         </Stack.Screen>
         <Stack.Screen name="Medical" component={MedicalScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Schedule">
           {(props) => (
-            <ScheduleScreen {...props} showBottomTab={showBottomTab} />
+            <ScheduleScreen {...props} hideBottomTab={hideBottomTab} />
           )}
         </Stack.Screen>
       </Stack.Navigator>

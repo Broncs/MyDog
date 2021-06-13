@@ -1,11 +1,20 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useCallback } from "react";
+import { StyleSheet, View } from "react-native";
 import Colors from "../constants/colors";
 import Card from "../components/Card";
 import HeaderProfile from "../components/HeaderProfile";
 import Status from "../components/Status";
-import Navigation from "../components/Navigation";
-const HomeScreen = ({ navigation, hideBottomTab }) => {
+
+import { useFocusEffect } from "@react-navigation/native";
+
+const HomeScreen = ({ navigation, showBottomTab }) => {
+  useFocusEffect(
+    useCallback(() => {
+      // Do something when the screen is focused
+      showBottomTab();
+    }, [])
+  );
+
   return (
     <View style={styles.screen}>
       <HeaderProfile />
@@ -20,7 +29,6 @@ const HomeScreen = ({ navigation, hideBottomTab }) => {
           iconPath={require("../assets/icons/schedule-icon.png")}
           onPress={() => {
             navigation.navigate("Schedule");
-            hideBottomTab();
           }}
         />
       </View>
@@ -37,9 +45,6 @@ const HomeScreen = ({ navigation, hideBottomTab }) => {
           style={styles.card}
         />
       </View>
-      {/* <View style={styles.navWrapper}>
-        <Navigation />
-      </View> */}
     </View>
   );
 };
