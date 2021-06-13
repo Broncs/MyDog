@@ -5,7 +5,7 @@ import Card from "../components/Card";
 import HeaderProfile from "../components/HeaderProfile";
 import Status from "../components/Status";
 import Navigation from "../components/Navigation";
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation, hideBottomTab }) => {
   return (
     <View style={styles.screen}>
       <HeaderProfile />
@@ -18,7 +18,10 @@ const HomeScreen = ({ navigation }) => {
         <Card
           text="Schedule visits"
           iconPath={require("../assets/icons/schedule-icon.png")}
-          onPress={() => navigation.navigate("Schedule")}
+          onPress={() => {
+            navigation.navigate("Schedule");
+            hideBottomTab();
+          }}
         />
       </View>
       <View style={styles.cardWrapper}>

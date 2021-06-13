@@ -28,7 +28,11 @@ const Navigation = () => {
           }
         >
           <Image
-            tintColor={active === "home" ? "white" : "#797979"}
+            style={
+              active === "home"
+                ? { tintColor: "white" }
+                : { tintColor: "#797979" }
+            }
             source={require("../assets/icons/home-nav.png")}
           />
           <Text style={styles.navText}>{active === "home" && "Home"}</Text>
@@ -44,7 +48,11 @@ const Navigation = () => {
           }
         >
           <Image
-            tintColor={active === "noti" ? "white" : "#797979"}
+            style={
+              active === "noti"
+                ? { tintColor: "white" }
+                : { tintColor: "#797979" }
+            }
             source={require("../assets/icons/bell-nav.png")}
           />
           <Text style={styles.navText}>{active === "noti" && "Notif"}</Text>
@@ -60,7 +68,11 @@ const Navigation = () => {
           }
         >
           <Image
-            tintColor={active === "settings" ? "white" : "#797979"}
+            style={
+              active === "settings"
+                ? { tintColor: "white" }
+                : { tintColor: "#797979" }
+            }
             source={require("../assets/icons/settings-nav.png")}
           />
           <Text style={styles.navText}>
