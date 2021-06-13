@@ -1,11 +1,34 @@
-import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import React, { useEffect } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  BackHandler,
+  Alert,
+} from "react-native";
 import Input from "../components/Input";
 import MainButton from "../components/MainButton";
 import colors from "../constants/colors";
 import Header from "../components/Header";
 
 const LoginScreen = ({ navigation, showBottomTab }) => {
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert("Hold on!", "Are you sure you want to go back ?", [
+        { text: "Cancel", onPress: () => null, style: "cancel" },
+        { text: "YES", onPress: () => BackHandler.exitApp() },
+      ]);
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   return (
     <View style={styles.screen}>
       <Header title="myDog" />

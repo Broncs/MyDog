@@ -1,10 +1,30 @@
-import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import React, { useEffect } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  BackHandler,
+} from "react-native";
 import ScheduleCard from "../components/ScheduleCard";
 import SubHeader from "../components/SubHeader";
 import * as RootNavigation from "../RootNavigation";
 
 const ScheduleScreen = ({ showBottomTab }) => {
+  useEffect(() => {
+    const backAction = () => {
+      showBottomTab();
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   return (
     <View style={styles.screen}>
       <SubHeader style={styles.subHeader} title="Schedule visits" />
