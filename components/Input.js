@@ -3,10 +3,18 @@ import { StyleSheet, TextInput, View, Image } from "react-native";
 
 const Input = (props) => {
   const [enteredText, setEnteredText] = useState("");
+  console.log(props.imgColor);
   return (
     <View style={styles.inputContainer}>
       <View
-        style={props.paw ? styles.imageContainer : styles.imageContainerLock}
+        style={
+          props.paw
+            ? { ...styles.imageContainer, borderColor: props.imgColor.email }
+            : {
+                ...styles.imageContainerLock,
+                borderColor: props.imgColor.password,
+              }
+        }
       >
         <Image
           source={
@@ -26,6 +34,8 @@ const Input = (props) => {
         secureTextEntry={!props.paw}
         onChangeText={setEnteredText}
         value={enteredText}
+        onFocus={props.onFocus}
+        onBlur={props.onBlur}
       />
     </View>
   );

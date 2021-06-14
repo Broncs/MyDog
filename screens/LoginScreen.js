@@ -1,13 +1,18 @@
-import React, { useCallback } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import React, { useCallback, useState } from "react";
+import { Animated, StyleSheet, Text, View, Image } from "react-native";
 
 import { useFocusEffect } from "@react-navigation/native";
 import Input from "../components/Input";
 import MainButton from "../components/MainButton";
-import colors from "../constants/colors";
+import Colors from "../constants/colors";
 import Header from "../components/Header";
 
 const LoginScreen = ({ navigation, hideBottomTab }) => {
+  const [borderColor, setBorderColor] = useState({
+    email: "#C5C5C5",
+    password: "#C5C5C5",
+  });
+
   useFocusEffect(
     useCallback(() => {
       // Do something when the screen is focused
@@ -16,12 +21,41 @@ const LoginScreen = ({ navigation, hideBottomTab }) => {
     }, [])
   );
 
+  const onFocus = (key) => {
+    setBorderColor({
+      ...borderColor,
+      [key]: borderColor[key] === "#C5C5C5" ? Colors.primary : "#C5C5C5",
+    });
+    // setBorderColor((prev) =>
+    //   prev.email === "#C5C5C5"
+    //     ? (prev.email: Colors.primary)
+    //     : (prev.email: "#C5C5C5")
+    // );
+    console.log("run");
+  };
+
   return (
     <View style={styles.screen}>
       <Header title="myDog" />
       <View style={styles.inputContainer}>
-        <Input placeholder="Username or e-mail" paw autoCorrect={false} />
-        <Input placeholder="Password" autoCorrect={false} />
+        <Input
+          onFocus={() => onFocus("email")}
+          onBlur={() => onFocus("email")}
+          style={{ borderBottomColor: borderColor.email }}
+          imgColor={borderColor}
+          placeholder="Username or e-mail"
+          paw
+          autoCorrect={false}
+        />
+        <Input
+          onFocus={() => onFocus("password")}
+          onBlur={() => onFocus("password")}
+          style={{ borderBottomColor: borderColor.password }}
+          imgColor={borderColor}
+          placeholder="Password"
+          autoCorrect={false}
+        />
+
         <View style={styles.buttonContainer}>
           <MainButton
             onPress={() => {
@@ -72,7 +106,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   innerText: {
-    color: colors.primary,
+    color: Colors.primary,
   },
   imageContainer: {
     alignItems: "center",
