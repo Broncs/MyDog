@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as RootNavigation from "../RootNavigation";
+import BodyText from "./BodyText";
 
 import {
   StyleSheet,
@@ -35,7 +36,9 @@ const Navigation = () => {
             }
             source={require("../assets/icons/home-nav.png")}
           />
-          <Text style={styles.navText}>{active === "home" && "Home"}</Text>
+          <BodyText style={styles.navText}>
+            {active === "home" && "Home"}
+          </BodyText>
         </View>
       </TouchableWithoutFeedback>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
+import HeaderText from "./HeaderText";
 
 const SubHeader = (props) => {
   return (
@@ -8,7 +9,7 @@ const SubHeader = (props) => {
         style={styles.image}
         source={require("../assets/icons/pawprint-orange.png")}
       />
-      <Text style={styles.text}>{props.title}</Text>
+      <HeaderText style={styles.text}>{props.title}</HeaderText>
     </View>
   );
 };
@@ -27,8 +28,6 @@ const styles = StyleSheet.create({
     height: 19,
   },
   text: {
-    fontSize: 25,
-    fontWeight: "bold",
     marginHorizontal: 13,
   },
 });

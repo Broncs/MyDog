@@ -7,6 +7,13 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+import AppLoading from "expo-app-loading";
+import {
+  useFonts,
+  Roboto_400Regular,
+  Roboto_700Bold,
+} from "@expo-google-fonts/roboto";
+
 import LoginScreen from "./screens/LoginScreen";
 import HomeScreen from "./screens/HomeScreen";
 import MedicalScreen from "./screens/MedicalScreen";
@@ -18,6 +25,15 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const [tabVisible, setTabVisible] = useState(false);
+
+  let [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
 
   const showBottomTab = () => {
     setTabVisible(true);

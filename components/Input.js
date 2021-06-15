@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View, Image } from "react-native";
 
 const Input = (props) => {
   const [enteredText, setEnteredText] = useState("");
-  console.log(props.imgColor);
+
   return (
     <View style={styles.inputContainer}>
       <View
@@ -56,8 +56,9 @@ const styles = StyleSheet.create({
     borderBottomColor: "#C5C5C5",
     borderBottomWidth: 1,
     width: "70%",
+    fontFamily: "Roboto_400Regular",
     // letterSpacing: 4.8,
-
+    fontSize: 13,
     color: "#7A7A7A",
     // marginLeft: 10,
   },

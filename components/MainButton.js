@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import HeaderText from "./HeaderText";
 
 import Colors from "../constants/colors";
 
@@ -13,7 +14,7 @@ const MainButton = (props) => {
             : styles.button
         }
       >
-        <Text
+        <HeaderText
           style={
             props.secondary
               ? { ...styles.buttonText, color: Colors.primary }
@@ -21,7 +22,7 @@ const MainButton = (props) => {
           }
         >
           {props.children}
-        </Text>
+        </HeaderText>
       </View>
     </TouchableOpacity>
   );

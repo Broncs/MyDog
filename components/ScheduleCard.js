@@ -1,5 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
+import BodyText from "./BodyText";
+import HeaderText from "./HeaderText";
 
 import Colors from "../constants/colors";
 
@@ -7,10 +9,10 @@ const ScheduleCard = ({ day, month, desc }) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.dataContainer}>
-        <Text style={styles.dataNumber}>{day}</Text>
+        <HeaderText style={styles.dataNumber}>{day}</HeaderText>
       </View>
-      <Text style={styles.dataText}>{month}</Text>
-      <Text style={styles.descText}>{desc}</Text>
+      <HeaderText style={styles.dataText}>{month}</HeaderText>
+      <HeaderText style={styles.descText}>{desc}</HeaderText>
     </View>
   );
 };
@@ -35,20 +37,18 @@ const styles = StyleSheet.create({
   dataNumber: {
     color: "white",
     fontSize: 25,
-    fontWeight: "bold",
   },
   dataText: {
     color: "white",
     fontSize: 15,
-    fontWeight: "bold",
-    letterSpacing: 2,
+    letterSpacing: 1.2,
     marginVertical: 4,
   },
   descText: {
     fontSize: 10,
     color: "white",
     textAlign: "center",
-    fontWeight: "bold",
-    letterSpacing: 1.4,
+
+    letterSpacing: 1.2,
   },
 });

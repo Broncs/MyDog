@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Colors from "../constants/colors";
+import BodyText from "./BodyText";
 
 const Card = ({ text, iconPath, style, onPress }) => {
   const [firstText, secondText] = text.split(" ");
@@ -15,8 +16,8 @@ const Card = ({ text, iconPath, style, onPress }) => {
           }
         />
         <View style={styles.textWrapper}>
-          <Text style={styles.text}>{firstText}</Text>
-          <Text style={styles.text}>{secondText}</Text>
+          <BodyText style={styles.text}>{firstText}</BodyText>
+          <BodyText style={styles.text}>{secondText}</BodyText>
         </View>
       </View>
     </TouchableOpacity>
@@ -42,7 +43,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: 10,
     color: "white",
   },
 });

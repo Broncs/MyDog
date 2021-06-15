@@ -1,35 +1,36 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Colors from "../constants/colors";
+import BodyText from "./BodyText";
 
 const Info = () => {
   return (
     <View style={styles.infoWrapper}>
       <View style={styles.infoItem}>
-        <Text style={styles.infoText}>Owner's Name</Text>
+        <BodyText style={styles.infoText}>Owner's Name</BodyText>
         <Text style={styles.infoTextOrange}>Luciano Gomes</Text>
       </View>
 
       <View style={styles.infoItem}>
-        <Text style={styles.infoText}>Doctor's Name</Text>
+        <BodyText style={styles.infoText}>Doctor's Name</BodyText>
         <Text style={styles.infoTextOrange}>Aline Kossfer</Text>
       </View>
 
       <View style={styles.infoItem}>
-        <Text style={styles.infoText}>Address</Text>
-        <Text style={styles.infoTextOrange}>
+        <BodyText style={styles.infoText}>Address</BodyText>
+        <BodyText style={styles.infoTextOrange}>
           Street 3, Planice{"\n"}walkers, Goiás{"\n"}Brazil - 75900000
-        </Text>
+        </BodyText>
       </View>
 
       <View style={styles.infoItem}>
-        <Text style={styles.infoText}>Phone</Text>
-        <Text style={styles.infoTextOrange}>+55 (64) 99999999</Text>
+        <BodyText style={styles.infoText}>Phone</BodyText>
+        <BodyText style={styles.infoTextOrange}>+55 (64) 99999999</BodyText>
       </View>
 
       <View style={styles.infoItem}>
-        <Text style={styles.infoText}>Email</Text>
-        <Text style={styles.infoTextOrange}>pet@gomes.com.br</Text>
+        <BodyText style={styles.infoText}>Email</BodyText>
+        <BodyText style={styles.infoTextOrange}>pet@gomes.com.br</BodyText>
       </View>
     </View>
   );
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 13,
+    letterSpacing: 1,
   },
   infoTextOrange: {
     color: Colors.primary,

@@ -25,8 +25,9 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 40,
-    fontWeight: "bold",
+    // fontWeight: "bold",
     padding: 10,
+    fontFamily: "Roboto_700Bold",
   },
   image: {
     width: 24,

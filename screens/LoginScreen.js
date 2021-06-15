@@ -26,12 +26,6 @@ const LoginScreen = ({ navigation, hideBottomTab }) => {
       ...borderColor,
       [key]: borderColor[key] === "#C5C5C5" ? Colors.primary : "#C5C5C5",
     });
-    // setBorderColor((prev) =>
-    //   prev.email === "#C5C5C5"
-    //     ? (prev.email: Colors.primary)
-    //     : (prev.email: "#C5C5C5")
-    // );
-    console.log("run");
   };
 
   return (
@@ -103,7 +97,7 @@ const styles = StyleSheet.create({
   signUp: {
     marginTop: 19,
     fontSize: 10,
-    fontWeight: "bold",
+    fontFamily: "Roboto_700Bold",
   },
   innerText: {
     color: Colors.primary,

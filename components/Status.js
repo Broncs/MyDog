@@ -1,27 +1,27 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 import Colors from "../constants/colors";
-
+import BodyText from "../components/BodyText";
 const Status = (props) => {
   return (
     <View style={{ ...styles.wrapper, ...props.style }}>
       <View style={styles.item}>
-        <Text style={styles.itemText}>Rotweiller</Text>
+        <BodyText style={styles.itemText}>Rotweiller</BodyText>
         <Image source={require("../assets/icons/pawprint-orange.png")} />
       </View>
 
       <View style={styles.item}>
-        <Text style={styles.itemText}>35 kg</Text>
+        <BodyText style={styles.itemText}>35 kg</BodyText>
         <Image source={require("../assets/icons/weighing-machine-icon.png")} />
       </View>
 
       <View style={styles.item}>
-        <Text style={styles.itemText}>23.06.2020</Text>
+        <BodyText style={styles.itemText}>23.06.2020</BodyText>
         <Image source={require("../assets/icons/confetti-icon.png")} />
       </View>
 
       <View style={styles.item}>
-        <Text style={styles.itemText}>Female</Text>
+        <BodyText style={styles.itemText}>Female</BodyText>
         <Image source={require("../assets/icons/gender-icon.png")} />
       </View>
     </View>
@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   itemText: {
-    fontSize: 10,
     marginBottom: 9,
   },
 });

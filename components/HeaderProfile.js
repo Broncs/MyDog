@@ -1,19 +1,19 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-
+import BodyText from "../components/BodyText";
+import HeaderText from "../components/HeaderText";
 const HeaderProfile = () => {
   return (
     <View style={styles.profileWrapper}>
       <View>
-        <Text style={styles.dataText}>April, 07,2021</Text>
-        <Text style={styles.nameTitle}>Athena</Text>
+        <BodyText style={styles.dataText}>April, 07,2021</BodyText>
+        <HeaderText style={styles.nameTitle}>Athena</HeaderText>
       </View>
-      {/* <View style={styles.imageWrapper}> */}
+
       <Image
         style={styles.image}
         source={require("../assets/images/profile-dog.png")}
       />
-      {/* </View> */}
     </View>
   );
 };
