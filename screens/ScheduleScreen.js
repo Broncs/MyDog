@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
   dogImageWrapper: {
     alignSelf: "flex-end",
     justifyContent: "space-around",
+    height: "100%",
   },
   rectangleImg: {
     position: "absolute",
