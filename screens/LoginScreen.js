@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Animated, StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 import { useFocusEffect } from "@react-navigation/native";
 import Input from "../components/Input";
@@ -75,6 +75,15 @@ const LoginScreen = ({ navigation, hideBottomTab }) => {
           source={require("../assets/images/wave-mobile.png")}
         />
       </View>
+
+      <Image
+        style={styles.pawPrintImg1}
+        source={require("../assets/icons/pawprint-orange.png")}
+      />
+      <Image
+        style={styles.pawPrintImg2}
+        source={require("../assets/icons/pawprint-orange.png")}
+      />
     </View>
   );
 };
@@ -117,5 +126,16 @@ const styles = StyleSheet.create({
     resizeMode: "stretch",
     width: "100%",
     zIndex: -1,
+  },
+
+  pawPrintImg1: {
+    position: "absolute",
+    top: 350,
+    left: 20,
+  },
+  pawPrintImg2: {
+    position: "absolute",
+    top: "70%",
+    right: 20,
   },
 });
