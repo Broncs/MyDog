@@ -38,10 +38,13 @@ const ScheduleScreen = ({ hideBottomTab }) => {
       </TouchableOpacity>
 
       <View style={styles.bottomContainer}>
-        <Image
-          style={styles.dogImage}
-          source={require("../assets/images/main-dog.png")}
-        />
+        <View style={styles.dogImageWrapper}>
+          <Image
+            style={styles.dogImage}
+            source={require("../assets/images/main-dog.png")}
+          />
+        </View>
+
         <Image
           style={styles.rectangleImg}
           source={require("../assets/images/Rectangle-mobile.png")}
@@ -70,26 +73,27 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   bottomContainer: {
-    position: "relative",
+    flex: 1,
     width: "100%",
-    height: "40%",
+    position: "relative",
+  },
+  dogImageWrapper: {
+    alignSelf: "flex-end",
+    justifyContent: "space-around",
   },
   rectangleImg: {
     position: "absolute",
     left: 0,
     right: 0,
     bottom: 0,
-    top: 20,
+
     resizeMode: "stretch",
     width: "100%",
     zIndex: -1,
   },
   dogImage: {
-    position: "absolute",
-    right: 0,
-    bottom: -20,
     resizeMode: "contain",
-    width: "60%",
+    maxHeight: 350,
   },
   iconWrapper: {
     position: "absolute",
